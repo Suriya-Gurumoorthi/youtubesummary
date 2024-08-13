@@ -55,18 +55,6 @@ youtube_link = st.text_input("Paste link to video")
 if youtube_link:
     video_id = youtube_link.split("=")[1]
     
-question = st.text_input("Enter your query. If not go for Summary ",key="query")
-
-    
-if st.button("Query"):
-    transcript_text=extract_transcript_details(youtube_link)
-
-    if transcript_text:
-        ans=query_generate(transcript_text,prompt1)
-        st.markdown("# Answer")
-        st.write(ans)
-
-
 if st.button("Summarize"):
     transcript_text=extract_transcript_details(youtube_link)
 
